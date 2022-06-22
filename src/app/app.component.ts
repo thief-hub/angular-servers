@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ServerModel} from "./server/server.model";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Servers';
+  servers!: ServerModel[];
+
+  constructor() {
+  }
+
+  parentToServers(menuServers: ServerModel[]) {
+    this.servers =  menuServers;
+  }
 }

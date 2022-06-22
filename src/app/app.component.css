@@ -1,0 +1,75 @@
+.outerbox {
+  background: #38CAEA;
+  border-radius: 30px;
+  margin: 3rem;
+}
+
+h1 {
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0;
+  font-family: Roboto;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: center;
+
+}
+
+.innerbox {
+  border-radius: 30px;
+  background: #FEFEFE;
+  padding: 2.1rem;
+}
+
+.menuBox {
+  border-radius: 30px;
+  background: #F3F3F3;
+  min-height: 25.2rem;
+  width: 390px;
+  margin-bottom: 2.1rem;
+}
+
+.contentBox {
+  border-radius: 30px;
+  background: #F3F3F3;
+  padding: 2.1rem;
+}
+
+@media screen and (min-width: 914px) {
+  .innerbox {
+    display: flex;
+  }
+
+  .menuBox {
+    margin-right: 2.1rem;
+    margin-bottom: 0;
+    width: 39rem;
+    min-height: 41.4rem;
+  }
+
+  .contentBox {
+    flex-grow: 1;
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 913px) {
+  .outerbox {
+    width: 428px;
+  }
+
+  .menuBox {
+    padding-top: 1px;
+    /*WHAT THE HECK,
+    IF PIXEL DOESNT EXIST ITS CHAOS BUT ONLY IN MOBILE*/
+  }
+
+  .contentBox {
+    padding-bottom: 1px;
+    /*THIS ONE TWO WHAT THE FUCK*/
+  }
+}
+
+

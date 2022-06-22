@@ -1,0 +1,7 @@
+@media screen and (min-width: 914px) {
+  .serversBox {
+    display: grid;
+    gap: 21px;
+    grid-template-columns: repeat(auto-fit,minmax(344px, 1fr));
+  }
+}

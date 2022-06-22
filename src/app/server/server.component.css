@@ -1,0 +1,56 @@
+.outerbox {
+  background: #38CAEA;
+  border-radius: 30px;
+  width: 34.4rem;
+}
+
+h1 {
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0;
+  font-family: Roboto;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: center;
+
+}
+
+.innerbox {
+  background: #FEFEFE;
+  border-radius: 30px;
+  height: 261px;
+  padding: 2.5rem;
+}
+
+@media screen and (max-width: 914px) {
+  .outerbox {
+    margin-bottom: 2.1rem;
+  }
+}
+
+.databaseGreen {
+  filter: invert(75%) sepia(10%) saturate(1584%) hue-rotate(84deg) brightness(87%) contrast(91%);
+  float: left;
+}
+
+.databaseRed {
+  filter: invert(60%) sepia(46%) saturate(451%) hue-rotate(312deg) brightness(91%) contrast(91%);
+  float: left;
+}
+
+button {
+  width: 143px;
+  height: 47px;
+  border: none;
+  float: right;
+  background: #38CAEA;
+  border-radius: 10px;
+  margin-bottom: 1.3rem;
+}
+
+button:disabled {
+  background: #F3F3F3;
+;
+}

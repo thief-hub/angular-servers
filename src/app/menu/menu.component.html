@@ -1,0 +1,20 @@
+<div class="menubox">
+  <label id="enterNameLabel"
+  [ngStyle]="{'color': (showError)? '#DF8080': 'black'}"
+  >Server Name: </label>
+  <input type="text" #inputValue placeholder="Servername"
+  [(ngModel)]="setInputValue"
+  (input)="onInput(inputValue.value)"
+  [ngStyle]="
+  {'color': (showError)? '#DF8080': 'black'}">
+  <button
+    [disabled]="buttonDissabled"
+    (click)="onCreateServer(inputValue.value)">
+    Create</button>
+  <div class="errorMsg" *ngIf="showError">
+    <p>{{errorMsg}}</p>
+  </div>
+  <div class="creationMsg" *ngIf="showCreation">
+    <p>{{inputValue.value}} was created pog</p>
+  </div>
+</div>
