@@ -1,5 +1,6 @@
 .outerbox {
   background: #38CAEA;
+  min-width: 320px;
   border-radius: 30px;
   margin: 3rem;
 }
@@ -14,7 +15,6 @@ h1 {
   line-height: 60px;
   letter-spacing: 0em;
   text-align: center;
-
 }
 
 .innerbox {
@@ -26,9 +26,10 @@ h1 {
 .menuBox {
   border-radius: 30px;
   background: #F3F3F3;
-  min-height: 25.2rem;
-  width: 390px;
   margin-bottom: 2.1rem;
+  padding: 20px;
+  overflow: auto;
+  background: red;
 }
 
 .contentBox {
@@ -46,30 +47,13 @@ h1 {
     margin-right: 2.1rem;
     margin-bottom: 0;
     width: 39rem;
-    min-height: 41.4rem;
+    min-height: calc(100vh - 150px);
   }
 
   .contentBox {
     flex-grow: 1;
     padding-right: 0;
+    background: green;
+    min-height: calc(100vh - 150px);
   }
 }
-
-@media screen and (max-width: 913px) {
-  .outerbox {
-    width: 428px;
-  }
-
-  .menuBox {
-    padding-top: 1px;
-    /*WHAT THE HECK,
-    IF PIXEL DOESNT EXIST ITS CHAOS BUT ONLY IN MOBILE*/
-  }
-
-  .contentBox {
-    padding-bottom: 1px;
-    /*THIS ONE TWO WHAT THE FUCK*/
-  }
-}
-
-

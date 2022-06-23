@@ -1,18 +1,14 @@
 label {
   font-family: Roboto;
   font-size: 18px;
-  margin-top: 24px;
-  margin-left: 33px;
-  height: 21px;
+  text-indent: 1.4rem;
 }
 
 input {
   box-sizing: border-box;
   border: none;
-  width: 344px;
-  height: 47px;
-  margin-left: 23px;
-  margin-right: 23px;
+  width: 100%;
+  padding: 10px 5px;
   margin-top: 4px;
   background: #FFFFFF;
   border-radius: 10px;
@@ -34,7 +30,7 @@ button {
   width: 143px;
   height: 47px;
   margin-top: 13px;
-  margin-right: 23px;
+  margin-bottom: 23px;
   background: #D9DBDB;
   border-radius: 10px;
   border: none;
@@ -69,12 +65,10 @@ button:disabled {
 }
 
 .creationMsg {
-  margin-top: 33px;
-  margin-left: 23px;
-  width: 344px;
-  float: left;
   background: #64BD7D;
   border-radius: 10px;
+  clear: right;
+  padding: 5px;
 }
 
 .creationMsg p {

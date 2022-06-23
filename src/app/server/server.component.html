@@ -1,9 +1,11 @@
 <div class="outerbox">
-  <h1>{{server?.name}}</h1>
+  <h1>{{ server?.name }}</h1>
   <div class="innerbox">
-    <img [class.databaseGreen]="serverState"
-         [class.databaseRed]="!serverState"
-         src="../../assets/database-svgrepo-com.svg">
+    <img
+      [class.databaseGreen]="serverState"
+      [class.databaseRed]="!serverState"
+      src="../../assets/database-svgrepo-com.svg"
+    />
     <button (click)="toggleServer()">Start Server</button>
     <button [disabled]="true">Remove Server</button>
   </div>
