@@ -9,7 +9,11 @@ import { ServerModel } from '../server/server.model';
 export class MenuComponent implements OnInit {
   @Output() emitToParent = new EventEmitter<ServerModel[]>();
 
-  servers: ServerModel[] = [];
+  servers: ServerModel[] = [
+    { name: 'Beispiel Server 1' },
+    { name: 'Beispiel Server 2' },
+    { name: 'Beispiel Server 3' },
+  ];
   nameIndex: string[] = [];
   buttonDissabled: boolean = true;
   showError: boolean = false;
