@@ -8,12 +8,6 @@ import {ServerModel} from "./server/server.model";
 })
 export class AppComponent {
   title = 'Servers';
-  servers!: ServerModel[];
-
   constructor() {
-  }
-
-  parentToServers(menuServers: ServerModel[]) {
-    this.servers =  menuServers;
   }
 }

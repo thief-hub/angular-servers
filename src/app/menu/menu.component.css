@@ -44,12 +44,11 @@ button:disabled {
 }
 
 .errorMsg {
-  margin-top: 33px;
-  margin-left: 23px;
-  width: 344px;
-  float: left;
-  background: #DF8080;
   border-radius: 10px;
+  clear: right;
+  padding: 5px;
+  background: #DF8080;
+
 }
 
 .errorMsg p {

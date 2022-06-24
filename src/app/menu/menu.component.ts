@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ServerModel } from '../server/server.model';
+import { ServerlistService } from "../shared/serverlist.service";
 
 @Component({
   selector: 'app-menu',
@@ -7,30 +8,33 @@ import { ServerModel } from '../server/server.model';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  @Output() emitToParent = new EventEmitter<ServerModel[]>();
 
-  servers: ServerModel[] = [
-    { name: 'Beispiel Server 1' },
-    { name: 'Beispiel Server 2' },
-    { name: 'Beispiel Server 3' },
-  ];
   nameIndex: string[] = [];
   buttonDissabled: boolean = true;
   showError: boolean = false;
   errorMsg: string = 'Fehlermeldung';
   showCreation: boolean = false;
   setInputValue: string = '';
+  createdName: string = '';
+
+  ngOnInit(): void {
+    /*this.emitToParent.emit(this.servers);*/
+  }
+
+  constructor(private serverlistService: ServerlistService) {
+  }
 
   onInput(inputValue: string) {
-    for (let i = 0; i < this.servers.length; i++) {
-      this.nameIndex[i] = this.servers[i].name;
+    for (let i = 0; i < this.serverlistService.getServers().length; i++) {
+      this.nameIndex[i] = this.serverlistService.getServers()[i].name;
     }
 
     if (inputValue === '') {
       this.buttonDissabled = true;
+      this.showError = false;
     } else if (this.nameIndex.includes(inputValue)) {
       this.buttonDissabled = true;
-      this.errorMsg = 'name already exists dumbass';
+      this.showCreation = false;
       this.showError = true;
     } else {
       this.buttonDissabled = false;
@@ -40,15 +44,10 @@ export class MenuComponent implements OnInit {
   }
 
   onCreateServer(name: string) {
-    const server: ServerModel = { name: name };
-    this.servers.push(server);
-    this.setInputValue = '';
+    this.createdName = this.setInputValue;
     this.buttonDissabled = true;
-    this.emitToParent.emit(this.servers);
+    this.serverlistService.createServer(name);
     this.showCreation = true;
-  }
-
-  ngOnInit(): void {
-    this.emitToParent.emit(this.servers);
+    this.setInputValue = '';
   }
 }

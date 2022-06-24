@@ -6,6 +6,7 @@ import {FormsModule} from "@angular/forms";
 import { MenuComponent } from './menu/menu.component';
 import { ServersComponent } from './servers/servers.component';
 import { ServerComponent } from './server/server.component';
+import {ServerlistService} from "./shared/serverlist.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ServerComponent } from './server/server.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ServerlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

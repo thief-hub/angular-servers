@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ServerModel} from "../server/server.model";
+import {ServerlistService} from "../shared/serverlist.service";
 
 @Component({
   selector: 'app-servers',
@@ -7,12 +8,12 @@ import {ServerModel} from "../server/server.model";
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-  @Input('importFromRoot') servers!: ServerModel[];
+  servers: ServerModel[] = [];
 
-  constructor() {
-
+  constructor(private serverlistService: ServerlistService) {
   }
 
   ngOnInit(): void {
+    this.servers = this.serverlistService.getServers();
   }
 }
