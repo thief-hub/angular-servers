@@ -1,5 +1,6 @@
-import {ServerModel} from "../server/server.model";
+import { ServerModel } from '../server/server.model';
 
+// TODO: tests ergänzen
 export class ServerlistService {
   private servers: ServerModel[] = [];
 
@@ -10,17 +11,17 @@ export class ServerlistService {
   createServer(name: string) {
     const server: ServerModel = {
       name: name,
-      id: Date.now()
-    }
+      id: Date.now(),
+    };
     this.servers.push(server);
   }
 
   removeServer(id: number) {
     let index: number = 0;
     for (let i = 0; i < this.servers.length; i++) {
-      if(this.servers[i].id === id) {
+      if (this.servers[i].id === id) {
         index = i;
-        this.servers.splice(index, 1)
+        this.servers.splice(index, 1);
         return;
       }
     }
