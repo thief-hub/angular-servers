@@ -10,4 +10,5 @@
 - [ ] Reactive Forms + Validierung (https://angular.io/guide/reactive-forms)
 - [ ] reactive programming (https://rxjs.dev/guide/overview)
 - [ ] StateManagement (https://ngrx.io/)
+- [ ] Bootstrap Styling
 - [ ] nx monorepo tooling (https://nx.dev/structure/library-types#library-types)
