@@ -10,6 +10,7 @@
     placeholder="Servername"
     [(ngModel)]="setInputValue"
     (input)="onInput(inputValue.value)"
+    (keyup.enter)="onCreateServer(inputValue.value)"
     [ngStyle]="{ color: showError ? '#DF8080' : 'black' }"
   />
   <button

@@ -2,6 +2,11 @@ import {ServerModel} from "../server/server.model";
 
 export class ServerlistService {
   private servers: ServerModel[] = [];
+  private nameIndex: string[] = [];
+
+  getNameIndex() {
+    
+  }
 
   getServers() {
     return this.servers;

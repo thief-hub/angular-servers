@@ -41,10 +41,10 @@ h1 {
 }
 
 button {
+  float: right;
   width: 143px;
   height: 47px;
   border: none;
-  float: right;
   background: #38CAEA;
   border-radius: 10px;
   margin-bottom: 1.3rem;
@@ -52,5 +52,24 @@ button {
 
 button:disabled {
   background: #F3F3F3;
-;
+}
+
+@media screen and (max-width: 450px) {
+  button {
+    width: 100%;
+  }
+  .databaseRed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    float: none;
+  }
+  .databaseGreen {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    float: none;
+  }
 }

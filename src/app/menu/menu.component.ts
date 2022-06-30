@@ -25,9 +25,11 @@ export class MenuComponent implements OnInit {
   }
 
   onInput(inputValue: string) {
+    this.nameIndex = [];
     for (let i = 0; i < this.serverlistService.getServers().length; i++) {
       this.nameIndex[i] = this.serverlistService.getServers()[i].name;
     }
+    console.log(this.nameIndex);
 
     if (inputValue === '') {
       this.buttonDissabled = true;
