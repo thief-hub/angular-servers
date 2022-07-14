@@ -1,4 +1,13 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import { ServerModel } from '../server/server.model';
 import { ServerlistService } from "../shared/serverlist.service";
 
@@ -9,32 +18,24 @@ import { ServerlistService } from "../shared/serverlist.service";
 })
 export class MenuComponent implements OnInit {
 
-  nameIndex: string[] = [];
+  @ViewChild('inputValue') inputValueSetter!: ElementRef;
   buttonDissabled: boolean = true;
   showError: boolean = false;
   errorMsg: string = 'Fehlermeldung';
   showCreation: boolean = false;
-  setInputValue: string = '';
   createdName: string = '';
 
   ngOnInit(): void {
-    /*this.emitToParent.emit(this.servers);*/
   }
 
   constructor(private serverlistService: ServerlistService) {
   }
 
   onInput(inputValue: string) {
-    this.nameIndex = [];
-    for (let i = 0; i < this.serverlistService.getServers().length; i++) {
-      this.nameIndex[i] = this.serverlistService.getServers()[i].name;
-    }
-    console.log(this.nameIndex);
-
     if (inputValue === '') {
       this.buttonDissabled = true;
       this.showError = false;
-    } else if (this.nameIndex.includes(inputValue)) {
+    } else if (this.serverlistService.getServerNames().includes(inputValue)) {
       this.buttonDissabled = true;
       this.showCreation = false;
       this.showError = true;
@@ -46,10 +47,11 @@ export class MenuComponent implements OnInit {
   }
 
   onCreateServer(name: string) {
-    this.createdName = this.setInputValue;
+    if(this.buttonDissabled){return;}//bandaid
+    this.createdName = name;
     this.buttonDissabled = true;
     this.serverlistService.createServer(name);
     this.showCreation = true;
-    this.setInputValue = '';
+    this.inputValueSetter.nativeElement.value = '';
   }
 }

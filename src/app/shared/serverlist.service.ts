@@ -5,12 +5,17 @@ export class ServerlistService {
   private servers: ServerModel[] = [];
   private nameIndex: string[] = [];
 
-  getNameIndex() {
-    
-  }
-
   getServers() {
     return this.servers;
+  }
+
+  getServerNames() {
+    let nameIndex: string[] = [];
+    for (let i = 0; i < this.servers.length; i++) {
+      nameIndex[i] = this.servers[i].name;
+    }
+
+    return nameIndex;
   }
 
   createServer(name: string) {
@@ -19,6 +24,10 @@ export class ServerlistService {
       id: Date.now(),
     };
     this.servers.push(server);
+  }
+
+  changeName(name: string, newName: string) {
+    this.servers[this.getServerNames().indexOf(name)].name = newName;
   }
 
   removeServer(id: number) {
